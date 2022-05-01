@@ -58,6 +58,7 @@
 
   <modules>
     <module>tck</module>
+    <module>jsonp-tck-ext</module>
   </modules>
 
   <properties>
@@ -104,54 +105,63 @@
         <groupId>jakarta.enterprise</groupId>
         <artifactId>jakarta.enterprise.lang-model</artifactId>
         <version>${cdi.api.version}</version>
+        <scope>provided</scope>
       </dependency>
 
       <dependency>
         <groupId>jakarta.enterprise</groupId>
         <artifactId>jakarta.enterprise.cdi-api</artifactId>
         <version>${cdi.api.version}</version>
+        <scope>provided</scope>
       </dependency>
 
       <dependency>
         <groupId>jakarta.interceptor</groupId>
         <artifactId>jakarta.interceptor-api</artifactId>
         <version>${interceptors.api.version}</version>
+        <scope>provided</scope>
       </dependency>
 
       <dependency>
         <groupId>jakarta.annotation</groupId>
         <artifactId>jakarta.annotation-api</artifactId>
         <version>${annotations.api.version}</version>
+        <scope>provided</scope>
       </dependency>
 
       <dependency>
         <groupId>jakarta.inject</groupId>
         <artifactId>jakarta.inject-api</artifactId>
         <version>${inject.api.version}</version>
+        <scope>provided</scope>
       </dependency>
 
       <dependency>
         <groupId>jakarta.el</groupId>
         <artifactId>jakarta.el-api</artifactId>
         <version>${el.api.version}</version>
+        <scope>provided</scope>
       </dependency>
 
       <dependency>
         <groupId>jakarta.json</groupId>
         <artifactId>jakarta.json-api</artifactId>
         <version>${jsonp.api.version}</version>
+        <scope>provided</scope>
       </dependency>
 
       <dependency>
         <groupId>jakarta.json.bind</groupId>
         <artifactId>jakarta.json.bind-api</artifactId>
         <version>${jsonb.api.version}</version>
+        <scope>provided</scope>
       </dependency>
 
       <dependency>
         <groupId>jakarta.ws.rs</groupId>
         <artifactId>jakarta.ws.rs-api</artifactId>
         <version>${rest.api.version}</version>
+        <scope>provided</scope>
       </dependency>
 
       <dependency>
@@ -173,6 +183,14 @@
       </dependency>
 
       <dependency>
+        <groupId>jakarta.json</groupId>
+        <artifactId>jakarta.json-tck</artifactId>
+        <version>2.1.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <dependency>
         <groupId>org.jboss.arquillian</groupId>
         <artifactId>arquillian-bom</artifactId>
         <version>${arquillian.version}</version>
@@ -184,6 +202,11 @@
         <groupId>org.jboss.arquillian.container</groupId>
         <artifactId>container-se-api</artifactId>
         <version>${arquillian.container.se.api.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.arquillian.container</groupId>
+        <artifactId>arquillian-container-test-spi</artifactId>
+        <version>${arquillian.version}</version>
       </dependency>
 
       <dependency>

@@ -36,32 +36,38 @@
     <dependency>
       <groupId>jakarta.interceptor</groupId>
       <artifactId>jakarta.interceptor-api</artifactId>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>jakarta.annotation</groupId>
       <artifactId>jakarta.annotation-api</artifactId>
+      <scope>provided</scope>
     </dependency>
 
 
     <dependency>
       <groupId>jakarta.inject</groupId>
       <artifactId>jakarta.inject-api</artifactId>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>jakarta.json</groupId>
       <artifactId>jakarta.json-api</artifactId>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>jakarta.json.bind</groupId>
       <artifactId>jakarta.json.bind-api</artifactId>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>jakarta.ws.rs</groupId>
       <artifactId>jakarta.ws.rs-api</artifactId>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
@@ -78,6 +84,21 @@
       <artifactId>arquillian-junit5-container</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>jakarta.json</groupId>
+      <artifactId>jakarta.json-tck-tests</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.arquillian.container</groupId>
+      <artifactId>arquillian-container-test-spi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.shrinkwrap.resolver</groupId>
+      <artifactId>shrinkwrap-resolver-depchain</artifactId>
+      <type>pom</type>
+    </dependency>
   </dependencies>
 
   <build>
