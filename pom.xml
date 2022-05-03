@@ -57,6 +57,7 @@
   </licenses>
 
   <modules>
+    <module>doc</module>
     <module>tck</module>
     <module>jsonp-tck-ext</module>
   </modules>

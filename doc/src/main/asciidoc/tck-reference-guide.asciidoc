@@ -61,12 +61,16 @@ If you are running the Core Profile TCK for the first time, read <<introduction>
 :numbered:
 :sectanchors:
 
-include::part1.asciidoc[]
+include::introduction.asciidoc[]
 
-include::part2.asciidoc[]
+include::appeals-process.asciidoc[]
 
+include::installation.asciidoc[]
 
+include::configuration.asciidoc[]
 
+include::reporting.asciidoc[]
 
+include::sigtest.asciidoc[]
 
-
+include::executing.asciidoc[]

@@ -39,6 +39,12 @@ public class MavenTestDependenciesDeploymentPackager implements DeploymentScenar
         return Collections.singletonList(deployment);
     }
 
+    /**
+     * This resolves all test and compile scope artifacts in the project pom.xml and includes them as
+     * libraries in a jsonp-tck-tests-all.war
+     *
+     * @return shrinkwrap web archive for the test artifacts
+     */
     private WebArchive generateDeployment() {
         String[] activeMavenProfiles = {"staging"};
         MavenResolvedArtifact[] resolvedArtifacts = Maven.resolver().loadPomFromFile("pom.xml", activeMavenProfiles)

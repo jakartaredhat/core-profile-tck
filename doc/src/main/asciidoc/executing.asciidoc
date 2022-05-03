@@ -1,0 +1,4 @@
+[[executing]]
+
+== Executing (Core Profile TCK)
+The Jakarta Core Profile is designed to be executed in a framework like Maven where the Core Profile TCK along with each standalone TCK described as required in the [[introduction]] are configured in a profile that defined the dependencies and configuration to run the associated TCK.
