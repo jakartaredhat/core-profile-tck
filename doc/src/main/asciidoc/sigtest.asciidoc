@@ -7,3 +7,6 @@ One of the requirements of an implementation passing the TCK is for it to pass t
 The Core Profile specification has no API artifact other than the utility api jar that is a combination of the various component specifications that make up the Core Profile.
 
 === Running the Component Specification Signature Tests
+
+Each required component TCK describes how to run its signature tests. The JSON-P and JSON-B standalone TCKs include a test that sets up and runs the signature tests as part of the Junit 5 tests.
+
