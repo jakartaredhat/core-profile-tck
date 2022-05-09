@@ -27,10 +27,14 @@ import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.exporter.ZipExporter;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestReporter;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Validate a
+ */
 @ExtendWith(ArquillianExtension.class)
 public class ApplicationContextIT {
     @ArquillianResource
@@ -38,21 +42,21 @@ public class ApplicationContextIT {
 
     @Deployment(testable = false)
     public static WebArchive createTestArchive() {
-        WebArchive archive = ShrinkWrap.create(WebArchive.class, "rest_context_app.war");
+        WebArchive archive = ShrinkWrap.create(WebArchive.class, ApplicationContextIT.class.getSimpleName()+".war");
 
         archive.addClass(SimpleApplicationBean.class)
                 .addClass(ApplicationResource.class)
                 .addClass(JaxRsActivator.class);
-        System.out.printf("rest_context_app: %s\n", archive.toString(true));
+        System.out.printf("test archive: %s\n", archive.toString(true));
         archive.as(ZipExporter.class).exportTo(new File("/tmp/" + archive.getName()), true);
         return archive;
     }
 
     @Test
-    public void testApplicationContextSharedBetweenJaxRsRequests() throws Exception {
+    public void testApplicationContextSharedBetweenJaxRsRequests(TestReporter reporter) throws Exception {
         URI appIdURI = contextPath.toURI().resolve("rest/application-id");
-        System.out.printf("appIdURI: %s\nSleeping 60 seconds...", appIdURI.toASCIIString());
-        Thread.sleep(60*1000);
+        reporter.publishEntry(String.format("appIdURI: %s", appIdURI.toASCIIString()));
+
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target(appIdURI);
         String request1 = target.request(MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN).get(String.class);

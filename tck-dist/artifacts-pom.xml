@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) "2022" Red Hat and others
+  ~
+  ~ This program and the accompanying materials are made available under the
+  ~ Apache Software License 2.0 which is available at:
+  ~ https://www.apache.org/licenses/LICENSE-2.0.
+  ~
+  ~ SPDX-License-Identifier: Apache-2.0
+  ~
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>jakarta.ee.tck</groupId>
+  <artifactId>core-profile-tck-dependencies</artifactId>
+  <packaging>pom</packaging>
+  <version>10.0.0-SNAPSHOT</version>
+  <name>Jakarta Core Profile TCK Dependencies</name>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>3.0.0-M1</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <artifactId>maven-install-plugin</artifactId>
+        <configuration>
+          <groupId>jakarta.ee.tck</groupId>
+          <artifactId>core-tck-parent</artifactId>
+          <version>${project.version}</version>
+          <packaging>pom</packaging>
+          <file>cdi-lite-tck-suite-${project.version}.pom</file>
+          <generatePom>false</generatePom>
+        </configuration>
+        <executions>
+          <execution>
+            <id>install-cdi-lite-tck-suite</id>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <phase>validate</phase>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-install-plugin</artifactId>
+        <configuration>
+          <groupId>jakarta.ee.tck</groupId>
+          <artifactId>cdi-lite-tck-suite</artifactId>
+          <version>${project.version}</version>
+          <packaging>xml</packaging>
+          <file>cdi-lite-tck-suite-${project.version}.xml</file>
+          <generatePom>true</generatePom>
+        </configuration>
+        <executions>
+          <execution>
+            <id>install-cdi-lite-tck-suite</id>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <phase>validate</phase>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-install-plugin</artifactId>
+        <configuration>
+          <groupId>jakarta.ee.tck</groupId>
+          <artifactId>core-profile-tck-impl</artifactId>
+          <version>${project.version}</version>
+          <packaging>jar</packaging>
+          <file>core-profile-tck-impl-${project.version}.jar</file>
+          <generatePom>true</generatePom>
+        </configuration>
+        <executions>
+          <execution>
+            <id>install-core-profile-tck-impl</id>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <phase>validate</phase>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-install-plugin</artifactId>
+        <configuration>
+          <groupId>jakarta.ee.tck</groupId>
+          <artifactId>core-tck-jsonp-extension</artifactId>
+          <version>${project.version}</version>
+          <packaging>jar</packaging>
+          <file>core-tck-jsonp-extension-${project.version}.jar</file>
+          <generatePom>true</generatePom>
+        </configuration>
+        <executions>
+          <execution>
+            <id>install-core-tck-jsonp-extension</id>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <phase>validate</phase>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

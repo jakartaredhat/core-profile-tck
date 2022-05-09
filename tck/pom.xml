@@ -32,7 +32,6 @@
       <artifactId>container-se-api</artifactId>
     </dependency>
 
-
     <dependency>
       <groupId>jakarta.interceptor</groupId>
       <artifactId>jakarta.interceptor-api</artifactId>
@@ -44,7 +43,6 @@
       <artifactId>jakarta.annotation-api</artifactId>
       <scope>provided</scope>
     </dependency>
-
 
     <dependency>
       <groupId>jakarta.inject</groupId>
@@ -107,32 +105,8 @@
       <testResource>
         <directory>src/test/resources</directory>
       </testResource>
-      <testResource>
-        <directory>src/test/resources/mock</directory>
-      </testResource>
     </testResources>
     <plugins>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>copy</goal>
-            </goals>
-            <configuration>
-              <artifactItems>
-                <artifactItem>
-                  <groupId>jakarta.annotation</groupId>
-                  <artifactId>jakarta.annotation-api</artifactId>
-                </artifactItem>
-              </artifactItems>
-              <outputDirectory>${project.build.directory}/endorsed</outputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -158,9 +132,5 @@
       </plugin>
     </plugins>
   </build>
-
-  <profiles>
-
-  </profiles>
 
 </project>

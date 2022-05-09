@@ -1,0 +1,3 @@
+[submodule "wf-core-tck-runner"]
+	path = examples/wf-core-tck-runner
+	url = https://github.com/jakartaredhat/wf-core-tck-runner.git
