@@ -25,14 +25,15 @@
       </file>
       <!-- The HTML and PDF versions of the TCK userguide -->
       <file>
-         <source>target/generated-docs/tck-reference-guide.pdf</source>
+         <source>target/generated-docs/core-profile-tck-reference-guide.pdf</source>
          <outputDirectory>/doc</outputDirectory>
       </file>
       <file>
-         <source>target/generated-docs/tck-reference-guide.html</source>
+         <source>target/generated-docs/core-profile-tck-reference-guide.html</source>
          <outputDirectory>/doc</outputDirectory>
       </file>
    </files>
+   <!-- The compatible implementation tck runner examples -->
    <fileSets>
       <fileSet>
          <directory>${project.parent.basedir}/examples</directory>
