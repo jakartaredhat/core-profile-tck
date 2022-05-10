@@ -12,7 +12,7 @@ A TCK, or Technology Compatibility Kit, is one of the three required pieces for 
 
 The tests in the TCK are derived from assertions in the written specification document. The assertions are itemized in an XML document, where they each get assigned a unique identifier, and materialize as a suite of automated tests that collectively validate whether an implementation complies with the aforementioned assertions, and in turn the specification. For a particular implementation to be certified, all of the required tests must pass (i.e., the provided test suite must be run unmodified).
 
-A TCK is entirely implementation agnostic. Ideally, it should validate assertions by consulting the specification's public API.  However, when the information returned by the public API is not low-level enough to validate the assertion, the implementation must be consulted directly. In this case, the TCK provides an independent API as part of a porting package that enables this transparency. The porting package must be implemented for each Core Profile implementation. <<tck-components>> introduces the porting package and <<porting-package>> covers the requirements for implementing it.
+A TCK is entirely implementation agnostic. Ideally, it should validate assertions by consulting the specification's public API.  However, when the information returned by the public API is not low-level enough to validate the assertion, the implementation must be consulted directly. In this case, the TCK provides an independent API as part of a porting package that enables this transparency. The porting package must be implemented for each Core Profile implementation.
 
 
 === Compatibility Testing
@@ -237,4 +237,4 @@ The Core Profile TCK includes the following components:
 
 The Core Profile TCK has been tested on following platforms:
 
-*  WildFly X using Oracle Java SE 11 on Red Hat Enterprise Linux 8.5
+*  WildFly 27 Preview using Eclipse Temurin Java SE 11 on Linux based operation systems.
