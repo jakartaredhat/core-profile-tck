@@ -142,7 +142,7 @@
                      <descriptors>
                         <descriptor>src/main/assembly/assembly.xml</descriptor>
                      </descriptors>
-                     <finalName>core-profile-tck-${project.version}</finalName>
+                     <finalName>jakarta-core-profile-tck-${project.version}</finalName>
                   </configuration>
                </execution>
             </executions>

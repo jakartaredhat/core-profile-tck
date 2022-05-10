@@ -16,13 +16,10 @@ doc/
 
  – A detailed reference guide for the current version of TCK in both pdf and html formats
 
-lib/
 
- – Maven project to get all TCK dependencies
+examples/
 
-jboss-tck-runner/
-
- – maven-based TCK runner for WildFly
+- example maven based TCK runner projects for compatible implementations
 
 == Software Requirements
 
@@ -33,28 +30,13 @@ jboss-tck-runner/
 
 To install the zip file distribution of TCK into local repository:
 
-* unzip/untar the distribution file to create a cdi-tck-x.y.z directory.
-* Use the artifacts/artifact-install.sh script to install the TCK artifacts into a local maven repo.
+* unzip/untar the distribution file to create a core-profile-tck-x.y.z directory.
+* Use the artifacts/pom.xml maven script to install the TCK artifacts into a local maven repo by running `mvn install` from that directory.
 * Read the doc/cdi-tck-reference-guide.pdf for setup against your compatible implementation
 
-Note that you can also simply consume CDI-TCK artifacts from Maven Central.
+== Running against a compatible implementation
 
-== Running against Wildfly
-
-* download Wildfly https://wildfly.org/downloads/[server in respective version] and unzip to create
-a wildfly-{$version}.Final directory
-* Set the JBOSS_HOME environment variable to the path of the wildfly-{$version}.Final directory
-* Checkout the weld-core repository `git clone https://github.com/weld/core.git weld-core`
-* Change directory to weld-core
-* git checkout a version that is present in the WildFly server you downloaded, http://weld.cdi-spec.org/[Weld website]
-shows a table that captures which Weld versions are in which WildFly servers
-* Run `mvn clean package -Dtck -f jboss-as/pom.xml` to install TCK ext lib into wildfly-{$version}.Final (needed for 4 tests)
-* Run embedded container tests:
-`mvn clean verify -f jboss-tck-runner/pom.xml`
-* Run incontainer, full EE set [1800+ tests]
- `mvn clean verify -Dincontainer -f jboss-tck-runner/pom.xml`
-* Run SE tests [30+ tests]
-`mvn clean verify -Dincontainer=se -f jboss-tck-runner/pom.xml`
+Following the instructions in the examples/wf-core-tck-runner project to execute the required standalone and Core Profile TCK against WildFly.
 
 == Where to file challenges
 
